@@ -43,7 +43,7 @@
                         <td>
                             <form action="{{ route('books.destroy',$book->id) }}" method="POST">
 
-                                <a class="btn btn-primary btn-sm" href="{{ route('books.show',$book->id) }}">Show</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('qrcode',$book->id) }}">QR</a>
                                 <a class="btn btn-primary btn-sm" href="{{ route('books.edit',$book->id) }}">Edit</a>
             
                                 @csrf

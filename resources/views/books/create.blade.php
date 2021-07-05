@@ -62,7 +62,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <label>Year:</label>
-                                    <input type="number" name="year" class="form-control" placeholder="Year">
+                                    <input type="text" name="year" class="form-control" placeholder="Year">
                                 </div>
                             </div>
 

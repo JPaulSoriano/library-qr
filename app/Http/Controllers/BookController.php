@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $categories = Category::all();
         $books = Book::latest()->paginate(5);
@@ -30,7 +34,8 @@ class BookController extends Controller
             'quantity' => 'required'
         ]);
         $book = Book::create($request->all());
-        return redirect('/qrcode/'.$book->id);
+        return redirect()->route('books.index')
+        ->with('success','Book added successfully.');
     }
 
     public function show(Book $book){

@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::resource('categories','CategoryController');
 Route::resource('books','BookController');
-Route::get('/qrcode/{id}', 'QRController@generateQrCode');
+Route::get('/qrcode/{id}', 'QRController@generateQrCode')->name('qrcode');
 
 Auth::routes();
 
