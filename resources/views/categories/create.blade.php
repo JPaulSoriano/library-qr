@@ -2,16 +2,21 @@
   
 @section('content')
 <div class="container">
-@if ($errors->any())
-    <div class="alert alert-danger">
-        </p><strong>Whoops!</strong> There were some problems with your input.</p>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            </p><strong>Whoops!</strong> There were some problems with your input.</p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     </div>
-@endif
+    </div>
 
     <div class="row justify-content-center">
         <div class="col-md-8">

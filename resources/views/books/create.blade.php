@@ -2,17 +2,6 @@
   
 @section('content')
 <div class="container">
-@if ($errors->any())
-    <div class="alert alert-danger">
-        </p><strong>Whoops!</strong> There were some problems with your input.</p>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0 shadow">

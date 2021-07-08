@@ -7,12 +7,15 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('books.create') }}">Add</a>
         </div>
     </div>
-   
+   <div class="row">
+    <div class="col-lg-12">
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             {{ $message }}
         </div>
     @endif
+    </div>
+   </div>
 <div class="row">
 <div class="col-lg-12">
     <div class="card border-0 shadow">
