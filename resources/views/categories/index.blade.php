@@ -13,14 +13,21 @@
             {{ $message }}
         </div>
     @endif
-   
-    <table class="table table-bordered">
+<div class="row">
+<div class="col-lg-12">
+    <div class="card border-0 shadow">
+    <div class="card-header border-0 bg-primary text-white">Book Details</div>
+        <div class="card-body">  
+    <table class="table table-bordered" id="categories">
+    <thead>
         <tr>
             <th>No</th>
             <th>Name</th>
             <th width="280px">Action</th>
         </tr>
+    </thead>
         @foreach ($categories as $category)
+    <tbody>
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $category->name }}</td>
@@ -38,9 +45,46 @@
                 </form>
             </td>
         </tr>
+    </tbody>
         @endforeach
     </table>
   
     {!! $categories->links() !!}
-</div>  
+</div>
+</div>
+</div>
+</div>
+</div>   
+@endsection
+@section('scripts')
+<script>
+$(document).ready(function() {
+        $('#categories').DataTable({
+            order: [[0, 'desc']],
+            dom: 'Bfrtip',
+            buttons: [{
+                responsive: true,
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, ':visible']
+                    }
+                },
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                'colvis'
+            ]
+        });
+    });
+</script>
 @endsection

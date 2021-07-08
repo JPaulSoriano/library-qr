@@ -18,7 +18,8 @@
     <div class="card border-0 shadow">
     <div class="card-header border-0 bg-primary text-white">Book Details</div>
         <div class="card-body">
-                <table class="table table-responsive">
+                <table class="table table-responsive" id="books">
+                <thead>
                     <tr>
                         <th>No</th>
                         <th>Title</th>
@@ -31,7 +32,9 @@
                         <th>Accession No</th>
                         <th width="280px">Action</th>
                     </tr>
+                </thead>
                     @foreach ($books as $book)
+                <tbody>
                     <tr>
                         <td>{{ ++$i }}</td>
                         <td>{{ $book->title }}</td>
@@ -55,6 +58,7 @@
                             </form>
                         </td>
                     </tr>
+                </tbody>
                     @endforeach
                 </table>
                 {!! $books->links() !!}
@@ -63,4 +67,37 @@
 </div>
 </div>
 </div>  
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function() {
+        $('#books').DataTable({
+            order: [[0, 'desc']],
+            dom: 'Bfrtip',
+            buttons: [{
+                responsive: true,
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, ':visible']
+                    }
+                },
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                'colvis'
+            ]
+        });
+    });
+</script>
 @endsection
