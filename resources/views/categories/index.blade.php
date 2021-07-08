@@ -23,8 +23,8 @@
     <div class="card border-0 shadow">
     <div class="card-header border-0 bg-primary text-white">Category Details</div>
         <div class="card-body">  
-    <table class="table table-bordered" id="categories">
-    <thead>
+    <table class="table table-bordered table-responsive" id="categories">
+    <thead class="bg-primary text-white">
         <tr>
             <th>No</th>
             <th>Name</th>
@@ -64,16 +64,32 @@
 @section('scripts')
 <script>
 $(document).ready(function() {
-    $('#categories').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'pdfHtml5',
-            'colvis',
-            'print'
-        ]
-    } );
-} );
-</script>
+        $('#categories').DataTable({
+            order: [[0, 'desc']],
+            dom: 'Bfrtip',
+            buttons: [{
+                responsive: true,
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: [0, ':visible']
+                    }
+                },
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                },
+                'colvis'
+            ]
+        });
+    });
+    </script>
 @endsection
