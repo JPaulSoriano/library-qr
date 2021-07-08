@@ -33,6 +33,7 @@ class BookController extends Controller
             'isbn' => 'required',
             'publisher' => 'required',
             'year' => 'required',
+            'ac_no' => 'required',
             'quantity' => 'required'
         ]);
         $book = Book::create($request->all());

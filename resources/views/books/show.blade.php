@@ -12,6 +12,7 @@
                         <p><span class="font-weight-bold bg-primary p-1 text-white">ISBN:</span> {{ $book->isbn }}</p>
                         <p><span class="font-weight-bold bg-primary p-1 text-white">Publisher:</span> {{ $book->publisher }}</p>
                         <p><span class="font-weight-bold bg-primary p-1 text-white">Year:</span> {{ $book->year }}</p>
+                        <p><span class="font-weight-bold bg-primary p-1 text-white">Accession No.:</span> {{ $book->ac_no }}</p>
                     </div>
             </div>
         </div>

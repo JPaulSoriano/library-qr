@@ -28,6 +28,7 @@
                         <th>Publisher</th>
                         <th>Year</th>
                         <th>Quantity</th>
+                        <th>Accession No</th>
                         <th width="280px">Action</th>
                     </tr>
                     @foreach ($books as $book)
@@ -40,6 +41,7 @@
                         <td>{{ $book->publisher }}</td>
                         <td>{{ $book->year }}</td>
                         <td>{{ $book->quantity }}</td>
+                        <td>{{ $book->ac_no }}</td>
                         <td>
                             <form action="{{ route('books.destroy',$book->id) }}" method="POST">
 
