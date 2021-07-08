@@ -51,13 +51,13 @@
                         <td>
                             <form action="{{ route('books.destroy',$book->id) }}" method="POST">
 
-                                <a class="btn btn-primary btn-sm" href="{{ route('qrcode',$book->id) }}">QR</a>
-                                <a class="btn btn-primary btn-sm" href="{{ route('books.edit',$book->id) }}">Edit</a>
+                                <a class="btn btn-primary btn-sm btn-block" href="{{ route('qrcode',$book->id) }}">QR</a>
+                                <a class="btn btn-primary btn-sm btn-block" href="{{ route('books.edit',$book->id) }}">Edit</a>
             
                                 @csrf
                                 @method('DELETE')
                 
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm btn-block my-2">Delete</button>
                             </form>
                         </td>
                     </tr>

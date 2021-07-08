@@ -39,14 +39,14 @@
             <td>
                 <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
    
-                    <a class="btn btn-primary btn-sm" href="{{ route('categories.show',$category->id) }}">Show</a>
+                    <a class="btn btn-primary btn-sm btn-block" href="{{ route('categories.show',$category->id) }}">Show</a>
     
-                    <a class="btn btn-primary btn-sm" href="{{ route('categories.edit',$category->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-sm btn-block" href="{{ route('categories.edit',$category->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    <button type="submit" class="btn btn-danger btn-sm btn-block my-2">Delete</button>
                 </form>
             </td>
         </tr>
