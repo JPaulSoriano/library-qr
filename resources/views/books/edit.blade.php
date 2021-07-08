@@ -71,6 +71,14 @@
                                             <input type="number" name="quantity" value="{{ $book->quantity }}" class="form-control" placeholder="Quantity">
                                         </div>
                                     </div>
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label>Accession No.:</label>
+                                            <input type="number" name="ac_no" value="{{ $book->ac_no }}" class="form-control" placeholder="Accession No">
+                                        </div>
+                                    </div>
+
                                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     </div>
