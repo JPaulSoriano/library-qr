@@ -1,10 +1,10 @@
 @extends('layouts.app')
  
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row my-3">
         <div class="col-lg-12">
-                <a class="btn btn-primary btn-sm" href="{{ route('categories.create') }}">Add</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('categories.create') }}">ADD</a>
         </div>
     </div>
    
@@ -23,7 +23,7 @@
     <div class="card border-0 shadow">
     <div class="card-header border-0 bg-primary text-white">Category Details</div>
         <div class="card-body">  
-    <table class="table table-bordered table-responsive" id="categories">
+    <table class="table table-bordered" id="categories">
     <thead class="bg-primary text-white">
         <tr>
             <th>No</th>
@@ -31,8 +31,8 @@
             <th width="280px">Action</th>
         </tr>
     </thead>
-        @foreach ($categories as $category)
     <tbody>
+    @foreach ($categories as $category)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $category->name }}</td>
@@ -50,11 +50,9 @@
                 </form>
             </td>
         </tr>
+    @endforeach
     </tbody>
-        @endforeach
     </table>
-  
-    {!! $categories->links() !!}
 </div>
 </div>
 </div>

@@ -1,10 +1,10 @@
 @extends('layouts.app')
  
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row my-3">
         <div class="col-lg-12">
-                <a class="btn btn-primary btn-sm" href="{{ route('books.create') }}">Add</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('books.create') }}">ADD</a>
         </div>
     </div>
    <div class="row">
@@ -21,7 +21,7 @@
     <div class="card border-0 shadow">
     <div class="card-header border-0 bg-primary text-white">Book Details</div>
         <div class="card-body">
-                <table class="table table-bordered table-responsive" id="books">
+                <table class="table table-bordered" id="books">
                 <thead class="bg-primary text-white">
                     <tr>
                         <th>No</th>
@@ -36,8 +36,8 @@
                         <th width="280px">Action</th>
                     </tr>
                 </thead>
-                    @foreach ($books as $book)
                 <tbody>
+                @foreach ($books as $book)
                     <tr>
                         <td>{{ ++$i }}</td>
                         <td>{{ $book->title }}</td>
@@ -61,10 +61,10 @@
                             </form>
                         </td>
                     </tr>
+                @endforeach
                 </tbody>
-                    @endforeach
                 </table>
-                {!! $books->links() !!}
+              
         </div>
     </div>
 </div>
